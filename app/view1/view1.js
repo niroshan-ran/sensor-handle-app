@@ -61,11 +61,11 @@ angular.module('myApp.view1', ['ngRoute', 'ngMaterial'])
             $http.put("http://localhost:8080/firealarm/sensors/"+id, $scope.sensor).then(function (response) {
 
                 if (response.data)
-                    alert("Put Data Method Executed Successfully!");
+                    alert("Sensor Data Updated Successfully!");
 
             }, function (response) {
 
-                alert("Put Data Method Failed to Execute!");
+                alert("Failed to Update Sensor Data!");
 
 
 
