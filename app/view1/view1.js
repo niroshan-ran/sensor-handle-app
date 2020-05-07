@@ -15,8 +15,7 @@ angular.module('myApp.view1', ['ngRoute', 'ngMaterial'])
         $scope.sensorList = [];
 
 
-
-        $scope.loadData = function() {
+        $scope.loadData = function () {
             $http.get("http://localhost:8080/firealarm/sensors").then(
                 function successCallback(response) {
                     $scope.sensorList.clear;
@@ -52,13 +51,7 @@ angular.module('myApp.view1', ['ngRoute', 'ngMaterial'])
 
             };
 
-
-            console.log("data " + $scope.sensor.sensorname);
-
-
-
-
-            $http.put("http://localhost:8080/firealarm/sensors/"+id, $scope.sensor).then(function (response) {
+            $http.put("http://localhost:8080/firealarm/sensors/" + id, $scope.sensor).then(function (response) {
 
                 if (response.data) {
                     $scope.loadData();
@@ -69,17 +62,10 @@ angular.module('myApp.view1', ['ngRoute', 'ngMaterial'])
                 alert("Failed to Update Sensor Data!");
 
 
-
             });
 
 
-
-
-
         };
-
-
-
 
 
     });
