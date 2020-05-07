@@ -60,11 +60,12 @@ angular.module('myApp.view1', ['ngRoute', 'ngMaterial'])
 
             $http.put("http://localhost:8080/firealarm/sensors/"+id, $scope.sensor).then(function (response) {
 
-                if (response.data)
+                if (response.data) {
+                    $scope.loadData();
                     alert("Sensor Data Updated Successfully!");
-
+                }
             }, function (response) {
-
+                $scope.loadData();
                 alert("Failed to Update Sensor Data!");
 
 
